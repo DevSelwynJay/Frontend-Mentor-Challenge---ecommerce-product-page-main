@@ -220,8 +220,28 @@ header{
                     text-transform: uppercase;
                     color: $black;
                     font-weight: 900;
+                    position: relative;
                 }
             }
+
+            ul{
+
+                .active > a{
+                    &::after{
+                        content: "";
+                        height: 4px;
+                        width: 100%;
+                        background-color: $orange;
+                        display: block;
+                        position: absolute;
+                        bottom: -10px;
+                        opacity: 1;
+                        transition: 300ms ease;
+                    }
+                }
+
+            }
+
         }
 
         .show{

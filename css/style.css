@@ -246,6 +246,20 @@ header .left-nav aside ul li > a {
   text-transform: uppercase;
   color: black;
   font-weight: 900;
+  position: relative;
+}
+
+header .left-nav aside ul .active > a::after {
+  content: "";
+  height: 4px;
+  width: 100%;
+  background-color: #ff7d1a;
+  display: block;
+  position: absolute;
+  bottom: -10px;
+  opacity: 1;
+  -webkit-transition: 300ms ease;
+  transition: 300ms ease;
 }
 
 header .left-nav .show {
