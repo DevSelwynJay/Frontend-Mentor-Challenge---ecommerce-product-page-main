@@ -159,6 +159,10 @@ header{
             display: none;
             cursor: pointer;
 
+            img{
+                height: 18px;
+            }
+
             @media only screen and (max-width: 991px) {
                 display: block;
                 order: 1;
@@ -190,6 +194,7 @@ header{
             left: 0;
             top: 0;
             transition: 300ms ease;
+            transform: translateX(-50%);
 
             visibility: hidden;
             opacity: 0;
@@ -198,6 +203,10 @@ header{
                 margin-bottom: 50px;
                 display: block;
                 cursor: pointer;
+
+                img{
+                    height: 18px;
+                }
             }
 
             ul{
@@ -218,6 +227,7 @@ header{
         .show{
             visibility: visible;
             opacity: 1;
+            transform: translateX(0);
         }
 
     }
@@ -493,11 +503,17 @@ header{
             background-color: $light-grayish-blue;
             border-radius: .4rem;
 
+            @media only screen and (max-width: 1024px) {
+                width: 40%;
+                justify-content: space-around;
+            }
+
             @media only screen and (max-width: 600px) {
+                width: 100%;
                justify-content: space-around;
                padding: 13px 0;
                margin-bottom: 17px;
-              }
+            }
 
             a{
                 display: flex;
