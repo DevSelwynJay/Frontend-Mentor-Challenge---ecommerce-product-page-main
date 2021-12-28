@@ -49,7 +49,7 @@ p {
 
 @media only screen and (max-width: 1024px) {
   .wrapper-inner {
-    padding: 0 50px;
+    padding: 0 40px;
   }
 }
 
@@ -171,6 +171,7 @@ header .left-nav nav ul .active > a::after {
 
 header .left-nav .mobile-menu-toggle {
   display: none;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 991px) {
@@ -180,6 +181,66 @@ header .left-nav .mobile-menu-toggle {
         -ms-flex-order: 1;
             order: 1;
   }
+}
+
+header .left-nav .backdrop {
+  background: rgba(0, 0, 0, 0.76);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 98;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: 300ms ease;
+  transition: 300ms ease;
+}
+
+header .left-nav aside {
+  max-height: 100%;
+  height: 100vh;
+  width: 40vw;
+  background-color: white;
+  position: absolute;
+  z-index: 99;
+  padding: 27px;
+  left: 0;
+  top: 0;
+  -webkit-transition: 300ms ease;
+  transition: 300ms ease;
+  visibility: hidden;
+  opacity: 0;
+}
+
+header .left-nav aside .close-mobile-menu {
+  margin-bottom: 50px;
+  display: block;
+  cursor: pointer;
+}
+
+header .left-nav aside ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 30px;
+}
+
+header .left-nav aside ul li > a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: black;
+  font-weight: 900;
+}
+
+header .left-nav .show {
+  visibility: visible;
+  opacity: 1;
 }
 
 header .right-nav {
