@@ -33,6 +33,11 @@ p{
 }
 .h1{
     font-size: 38px;
+
+    
+    @media only screen and (max-width: 375px) {
+        font-size: 26px;
+    }
 }
 .h3{
     font-size: 26px;
@@ -48,10 +53,18 @@ p{
     max-width: 1022px;
     margin: 0 auto;
     padding: 0 15px;
+
+    @media only screen and (max-width: 1024px) {
+        padding: 0 50px;
+    }
+    @media only screen and (max-width: 375px) {
+        padding: 0 20px;
+    }
 }
 
 /*header*/
 header{
+
 
     .header-row{
         display: flex;
@@ -59,6 +72,13 @@ header{
         align-items: center;
         border-bottom: 1px solid $grayish-blue;
         padding: 45px 0;
+
+        @media only screen and (max-width: 991px) {
+            padding: 24px 0;
+        }
+        @media only screen and (max-width: 375px) {
+            border-bottom: none;
+        }
     }
 
     .left-nav{
@@ -66,7 +86,24 @@ header{
         align-items: center;
         gap: 57px;
 
+        @media only screen and (max-width: 991px) {
+            gap: 14px;
+            align-items: baseline;
+        }
+
+        .logo{
+            @media only screen and (max-width: 991px) {
+                order: 2;
+            }
+        }
+
         nav{
+
+
+            @media only screen and (max-width: 991px) {
+                display: none;
+            }
+
             ul{
                 list-style: none;
                 display: flex;
@@ -100,6 +137,30 @@ header{
                         }
                     }
                 }
+
+                .active > a{
+                    &::after{
+                        content: "";
+                        height: 4px;
+                        width: 100%;
+                        background-color: $orange;
+                        display: block;
+                        position: absolute;
+                        bottom: -3.9rem;
+                        opacity: 1;
+                        transition: 300ms ease;
+                    }
+                }
+
+            }
+        }
+
+        .mobile-menu-toggle{
+            display: none;
+
+            @media only screen and (max-width: 991px) {
+                display: block;
+                order: 1;
             }
         }
 
@@ -110,9 +171,17 @@ header{
         align-items: center;
         gap: 45px;
 
+        @media only screen and (max-width: 991px) {
+            gap: 24px;
+        }
+
         .cart{
             cursor: pointer;
             position: relative;
+
+            @media only screen and (max-width: 991px) {
+               position: static;
+            }
             
             #cart-toggle{
                 position: relative;
@@ -138,6 +207,13 @@ header{
                 margin: 1rem 0;
                 visibility: hidden;
                 opacity: 0;
+                z-index: 99;
+
+                @media only screen and (max-width: 991px) {
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 90%;
+                }
 
                 &--header{
                     padding: 25px;
@@ -218,6 +294,11 @@ header{
                 border-radius: 100%;
                 transition: 300ms ease;
 
+                @media only screen and (max-width: 375px) {
+                    height: 30px;
+                    width: 30px;
+                }
+
                 &:hover{
                     border: 2px solid $orange;
                 }
@@ -231,13 +312,35 @@ header{
 .product-detail-view{
     padding: 106px 0;
 
+    @media only screen and (max-width: 1024px) {
+        padding: 56px 0;
+    }
+
+    @media only screen and (max-width: 375px) {
+        padding: 0px 0;
+        padding-bottom: 40px;
+    }
+
     &__container{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 123px;
+
+        @media only screen and (max-width: 1024px) {
+            grid-template-columns: repeat(1, 1fr);
+            gap: 16px;
+        }
+
+        @media only screen and (max-width: 375px) {
+            grid-template-columns: repeat(1, 1fr);
+            gap: 16px;
+        }
     }
 
     &__image{
+        overflow-x: hidden;
+        position: relative;
+
         img{
             max-width: 100%;
             width: 100%;
@@ -253,10 +356,16 @@ header{
                 border-radius: .4rem;
             }
         }
+
+
     }
 
     &__description{
         padding-top: 55px;
+
+        @media only screen and (max-width: 375px) {
+            padding-top: 5px;
+        }
 
         .brand-name{
             text-transform: uppercase;
@@ -266,12 +375,22 @@ header{
         }
         .title{
             margin-bottom: 32px;
+            @media only screen and (max-width: 600px) {
+                margin-bottom: 20px;
+            }
         }
         .desc{
             line-height: 1.6;
             margin-bottom: 30px;
         }
         .price{
+
+            @media only screen and (max-width: 600px) {
+               display: flex;
+               align-items: center;
+               justify-content: space-between;
+               margin-bottom: 30px;
+            }
 
            .selling-price{
             display: flex;
@@ -293,6 +412,11 @@ header{
             color: $grayish-blue;
             text-decoration: line-through;
             margin-bottom: 30px;
+
+            @media only screen and (max-width: 600px) {
+               margin: 0;
+            }
+
            }
 
         }
@@ -301,12 +425,23 @@ header{
     &__add-to-cart{
         display: flex;
         justify-content: space-between;
+        gap: 1rem;
+
+        @media only screen and (max-width: 600px) {
+           flex-direction: column;
+        }
 
         .quantity{
             display: flex;
             align-items: center;
             background-color: $light-grayish-blue;
             border-radius: .4rem;
+
+            @media only screen and (max-width: 600px) {
+               justify-content: space-around;
+               padding: 13px 0;
+               margin-bottom: 17px;
+              }
 
             a{
                 display: flex;
@@ -331,6 +466,12 @@ header{
                 border-radius: .4rem;
                 box-shadow: 0 14px 28px rgba(255, 125, 26, 0.25), 0 10px 10px rgba(255, 125, 26, 0.22);
                 transition: 300ms ease;
+
+                @media only screen and (max-width: 600px) {
+                   width: 100%;
+                   text-align: center;
+                 }
+         
 
                 &:hover{
                     background-color: $hover;

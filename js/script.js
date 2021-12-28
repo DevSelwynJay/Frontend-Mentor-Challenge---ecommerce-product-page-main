@@ -8,3 +8,4 @@ if(cart.classList.contains('open')){
 else{ 
     cart.classList.add('open');
 }});
+
